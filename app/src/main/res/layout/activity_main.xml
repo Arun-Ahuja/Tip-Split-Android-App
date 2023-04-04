@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/Gobtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="GO"
+        android:text="GO"
+        app:layout_constraintBaseline_toBaselineOf="@+id/NopInput"
+        app:layout_constraintEnd_toEndOf="@+id/TwtInput" />
+
+    <Button
+        android:id="@+id/Clrbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:onClick="Clr"
+        android:text="Clear"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <EditText
+        android:id="@+id/NopInput"
+        android:layout_width="92dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="14dp"
+        android:background="#98fb98"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/NopView"
+        app:layout_constraintEnd_toStartOf="@+id/Gobtn"
+        app:layout_constraintStart_toEndOf="@+id/NopView"
+        app:layout_constraintTop_toTopOf="@+id/NopView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/bttInput"
+        android:layout_width="187dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="16dp"
+        android:background="#98fb98"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/bttView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/bttView" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TpView">
+
+        <RadioButton
+            android:id="@+id/Tradio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:buttonTint="#673AB7"
+            android:onClick="radioClicked"
+            android:paddingRight="30px"
+            android:text="12%"
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            app:useMaterialThemeColors="false" />
+
+        <RadioButton
+            android:id="@+id/Fradio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#673AB7"
+            android:onClick="radioClicked"
+            android:paddingRight="30px"
+            android:text="15%"
+            android:textColor="@color/black"
+            android:textSize="19sp" />
+
+        <RadioButton
+            android:id="@+id/Eradio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#673AB7"
+            android:onClick="radioClicked"
+            android:paddingRight="30px"
+            android:text="18%"
+            android:textColor="@color/black"
+            android:textSize="19sp" />
+
+        <RadioButton
+            android:id="@+id/Twradio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#673AB7"
+            android:onClick="radioClicked"
+            android:text="20%"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="19sp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/TpView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:text="Tip Percent:"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/bttView"
+        app:layout_constraintTop_toBottomOf="@+id/bttView" />
+
+    <TextView
+        android:id="@+id/TaView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Tip Amount:"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/TpView"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <TextView
+        android:id="@+id/TwtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:text="Total with Tip:"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/TaView"
+        app:layout_constraintTop_toBottomOf="@+id/TaView" />
+
+    <TextView
+        android:id="@+id/NopView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:text="Number of people:"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/TaView"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <TextView
+        android:id="@+id/TppView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:text="Total per Person:"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/NopView"
+        app:layout_constraintTop_toBottomOf="@+id/NopView" />
+
+    <TextView
+        android:id="@+id/bttView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Bill Total with Tax:"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TaInput"
+        android:layout_width="138dp"
+        android:layout_height="39dp"
+        android:background="@color/material_dynamic_neutral90"
+        android:backgroundTint="@color/material_dynamic_neutral90"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/TaView"
+        app:layout_constraintEnd_toEndOf="@+id/bttInput"
+        app:layout_constraintHorizontal_bias="0.984"
+        app:layout_constraintStart_toEndOf="@+id/TaView"
+        app:layout_constraintTop_toTopOf="@+id/TaView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/TwtInput"
+        android:layout_width="139dp"
+        android:layout_height="42dp"
+        android:background="@color/material_dynamic_neutral90"
+        android:backgroundTint="@color/material_dynamic_neutral90"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/TwtView"
+        app:layout_constraintEnd_toEndOf="@+id/TaInput"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/TwtView"
+        app:layout_constraintTop_toTopOf="@+id/TwtView"
+        app:layout_constraintVertical_bias="0.533" />
+
+    <TextView
+        android:id="@+id/TppInput"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
+        android:background="@color/material_dynamic_neutral90"
+        android:backgroundTint="@color/material_dynamic_neutral90"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/TppView"
+        app:layout_constraintEnd_toEndOf="@+id/Gobtn"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/NopInput"
+        app:layout_constraintTop_toTopOf="@+id/TppView"
+        app:layout_constraintVertical_bias="0.333" />
+
+    <TextView
+        android:id="@+id/tvippp"
+        android:layout_width="187dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="16dp"
+        android:background="#98fb98"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/bttView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/bttView" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="355dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="150dp"
+        android:background="@color/black"
+        android:backgroundTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

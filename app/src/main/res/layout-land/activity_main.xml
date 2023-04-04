@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/Gobtn"
+        android:layout_width="100dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:onClick="GO"
+        android:text="GO"
+        android:textSize="19dp"
+        app:layout_constraintEnd_toEndOf="@+id/TppInput"
+        app:layout_constraintStart_toStartOf="@+id/NopInput"
+        app:layout_constraintTop_toBottomOf="@+id/NopInput" />
+
+    <Button
+        android:id="@+id/Clrbtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="Clr"
+        android:text="Clear"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider2"
+        app:layout_constraintVertical_bias="0.851" />
+
+    <EditText
+        android:id="@+id/NopInput"
+        android:layout_width="104dp"
+        android:layout_height="30dp"
+        android:background="#98fb98"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/NopView"
+        app:layout_constraintEnd_toEndOf="@+id/TppInput"
+        app:layout_constraintTop_toTopOf="@+id/NopView" />
+
+    <!--<EditText
+        android:id="@+id/bttInput"
+        android:layout_width="133dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="24dp"
+        android:background="#98fb98"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/bttView"
+        app:layout_constraintStart_toEndOf="@+id/bttView" />-->
+
+    <EditText
+        android:id="@+id/bttInput"
+        android:layout_width="133dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="24dp"
+        android:background="#98fb98"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/bttView"
+        app:layout_constraintStart_toEndOf="@+id/bttView" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/bttInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TpView">
+
+        <RadioButton
+            android:id="@+id/Tradio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:buttonTint="#673AB7"
+            android:onClick="radioClicked"
+            android:paddingRight="30px"
+            android:text="12%"
+            android:textColor="@color/black"
+            android:textSize="19dp"
+            app:useMaterialThemeColors="false" />
+
+        <RadioButton
+            android:id="@+id/Fradio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#673AB7"
+            android:onClick="radioClicked"
+            android:paddingRight="30px"
+            android:text="15%"
+            android:textColor="@color/black"
+            android:textSize="19dp" />
+
+        <RadioButton
+            android:id="@+id/Eradio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#673AB7"
+            android:onClick="radioClicked"
+            android:paddingRight="30px"
+            android:text="18%"
+            android:textColor="@color/black"
+            android:textSize="19dp" />
+
+        <RadioButton
+            android:id="@+id/Twradio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="#673AB7"
+            android:onClick="radioClicked"
+            android:text="20%"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="19dp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/TpView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Tip Percent:"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/TaView"
+        app:layout_constraintTop_toBottomOf="@+id/bttView" />
+
+    <TextView
+        android:id="@+id/TaView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Tip Amount:"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/TwtView"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <TextView
+        android:id="@+id/TwtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Total with Tip:"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/Clrbtn"
+        app:layout_constraintTop_toBottomOf="@+id/TaView" />
+
+    <TextView
+        android:id="@+id/NopView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="20dp"
+        android:text="Number of people:"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/bttInput"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TppView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:text="Total per Person:"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/NopView"
+        app:layout_constraintTop_toBottomOf="@+id/NopView" />
+
+    <TextView
+        android:id="@+id/bttView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Bill Total with Tax:"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/TpView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TaInput"
+        android:layout_width="170dp"
+        android:layout_height="30dp"
+        android:background="@color/material_dynamic_neutral90"
+        android:backgroundTint="@color/material_dynamic_neutral90"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/TaView"
+        app:layout_constraintEnd_toEndOf="@+id/radioGroup" />
+
+    <TextView
+        android:id="@+id/TwtInput"
+        android:layout_width="170dp"
+        android:layout_height="30dp"
+        android:background="@color/material_dynamic_neutral90"
+        android:backgroundTint="@color/material_dynamic_neutral90"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/TwtView"
+        app:layout_constraintEnd_toEndOf="@+id/TaInput" />
+
+    <TextView
+        android:id="@+id/TppInput"
+        android:layout_width="126dp"
+        android:layout_height="30dp"
+        android:background="@color/material_dynamic_neutral90"
+        android:backgroundTint="@color/material_dynamic_neutral90"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/TppView"
+        app:layout_constraintEnd_toEndOf="@+id/Clrbtn"
+        app:layout_constraintTop_toTopOf="@+id/TppView" />
+
+    <TextView
+        android:id="@+id/tvippp"
+        android:layout_width="133dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="24dp"
+        android:background="#98fb98"
+        android:ems="10"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="205dp"
+        tools:layout_editor_absoluteY="24dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/bttView"
+        app:layout_constraintStart_toEndOf="@+id/bttView"/>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="1dp"
+        android:layout_height="220dp"
+        android:background="@color/black"
+        android:backgroundTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/TppView"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

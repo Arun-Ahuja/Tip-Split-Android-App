@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TipSplit</string>
+    <string name="message">If you see this message, Android Studio is working!</string>
+</resources>
